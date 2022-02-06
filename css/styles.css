@@ -14,18 +14,6 @@ body {
   letter-spacing: 0.03em;
 }
 
-h2,
-h3,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
 .list {
   list-style: none;
   margin: 0;
@@ -43,6 +31,7 @@ img {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+
 .section__title {
   color: var(--title-text-color);
 
@@ -64,17 +53,6 @@ img {
   padding: 0;
 }
 
-.section .name {
-  color: var(--title-text-color);
-
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
-
-  margin-bottom: 10px;
-}
-
 /* logo */
 
 .logo {
@@ -86,22 +64,16 @@ img {
   line-height: 1.19;
   text-decoration: none;
 }
-.logo-web {
+.logo__web {
   color: rgba(33, 150, 243, 1);
-
-  /* font-family: Raleway, serif;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 1.19;
-  text-decoration: none; */
 }
 
 /* site nav */
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav__link:hover,
+.site-nav__link:focus {
   color: var(--accent-color);
 }
-.site-nav .link {
+.site-nav__link {
   color: rgba(0, 0, 0, 1);
 
   font-weight: 500;
@@ -112,19 +84,19 @@ img {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.site-nav .link.current {
+.site-nav__link--current {
   position: relative;
   color: var(--accent-color);
 }
 
-.link.current::after {
+.site-nav__link--current::after {
   content: '';
   position: absolute;
   display: block;
   width: 100%;
   height: 4px;
   left: 0;
-  top: 45px;
+  top: 55px;
 
   background: var(--accent-color);
   border-radius: 2px;
@@ -136,11 +108,11 @@ img {
   margin-left: 93px;
 }
 
-.site-nav .item:not(:last-child) {
+.site-nav__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.auth-nav .link {
+.auth-nav__link {
   color: rgba(117, 117, 117, 1);
 
   font-weight: 500;
@@ -154,8 +126,8 @@ img {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.auth-nav .link:hover,
-.auth-nav .link:focus {
+.auth-nav__link:hover,
+.auth-nav__link:focus {
   color: var(--accent-color);
 }
 
@@ -165,11 +137,11 @@ img {
   margin-left: auto;
 }
 
-.auth-nav .item + .item {
-  margin-left: 30px;
+.auth-nav__item:not(:last-child) {
+  margin-right: 30px;
 }
 
-.icon-mail {
+.auth-nav__icon {
   margin-right: 10px;
   fill: currentColor;
 }
@@ -270,11 +242,14 @@ img {
 .advantages-list__text {
   font-size: 14px;
   line-height: 1.71;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages-list {
   list-style: none;
   display: flex;
+  padding: 0;
 }
 .advantages-list__icon {
   display: flex;
@@ -291,8 +266,8 @@ img {
   width: 270px;
 }
 
-.advantages-list__item + .advantages-list__item {
-  margin-left: 30px;
+.advantages-list__item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* -----------Чем мы занимаемся ----------------*/
@@ -322,6 +297,10 @@ img {
 
   color: #ffffff;
   background-color: rgba(47, 48, 58, 0.8);
+}
+.activity__label {
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------------наша команда -------------------*/
@@ -357,6 +336,8 @@ img {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin: 0;
+  padding: 0;
 
   margin-bottom: 16px;
 }
@@ -461,79 +442,75 @@ img {
   align-items: baseline;
 }
 
-.footer-icon .item,
-.item-form {
+.footer-icon__label {
   color: var(--text-white-color);
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 
   margin-bottom: 20px;
-}
-
-.footer-icon .list {
-  display: flex;
 }
 
 .footer-icon {
   margin-left: 70px;
 }
-
-.footer-link-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 44px;
-  height: 44px;
+.social-network__link--dark {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 44px;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ------------------------------------- */
+.contacts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-link-icon:hover,
-.footer-link-icon:focus {
-  background-color: var(--accent-color);
-}
-
-.footer-list-icon:not(:last-child) {
-  margin-right: 10px;
-}
-
-.footer-link {
+.contacts__link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-list-link:not(:last-child) {
+.contacts__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.footer-link:hover,
-.footer-link:focus {
+.contacts__link:hover,
+.contacts__link:focus {
   color: var(--accent-color);
 }
-.logo-studio {
+.logo__studio {
   color: var(--text-white-color);
 }
 
-/* fooer form */
-.footer-form {
+/* fooer form  ---subscription */
+.subscription {
   width: 570px;
   height: 86px;
   margin-left: 93px;
 }
+.subscription__label {
+  color: var(--text-white-color);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
 
-.label-form {
+  margin-bottom: 20px;
+}
+
+.subscription__form {
   display: flex;
 }
 
-.footer-input {
+.subscription__input {
   width: 358px;
   height: 50px;
 
@@ -545,7 +522,7 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-btn {
+.subscription__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,17 +539,17 @@ img {
     color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-send {
+.subscription__icon {
   fill: var(--text-white-color);
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-text + .icon-send {
-  margin-left: 10px;
+.subscription__text {
+  margin-right: 10px;
 }
 
-.btn-text {
+.subscription__text {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
@@ -580,16 +557,16 @@ img {
   letter-spacing: 0.06em;
 }
 
-.footer-btn:hover,
-.footer-btn:focus {
+.subscription__btn:hover,
+.subscription__btn:focus {
   color: var(--accent-color);
   background-color: var(--text-white-color);
   cursor: pointer;
   outline: none;
 }
 
-.footer-btn:hover .icon-send,
-.footer-btn:focus .icon-send {
+.subscription__btn:hover .subscription__icon,
+.subscription__btn:focus .subscription__icon {
   fill: var(--accent-color);
   cursor: pointer;
 }
@@ -644,8 +621,8 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.portfolio-btn__item + .portfolio-btn__item {
-  margin-left: 8px;
+.portfolio-btn__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .project-grid {
@@ -715,6 +692,10 @@ img {
 
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-grid__text {
+  margin: 0;
+  padding: 0;
 }
 
 .project-grid__project:hover .project-grid__overlay {
